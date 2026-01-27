@@ -64,14 +64,22 @@ document.addEventListener('DOMContentLoaded', function() {
         let current = '';
         const scrollPosition = window.pageYOffset + 100; // Offset for navbar
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
+        // Check if user has scrolled to the bottom of the page
+        const scrolledToBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 10;
+
+        if (scrolledToBottom && sections.length > 0) {
+            // If at the bottom, highlight the last section
+            current = sections[sections.length - 1].getAttribute('id');
+        } else {
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+        }
 
         navLinksArray.forEach(link => {
             link.classList.remove('active');
