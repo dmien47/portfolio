@@ -104,4 +104,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update scroll indicator on scroll
     window.addEventListener('scroll', updateScrollIndicator);
     updateScrollIndicator(); // Initial call
+
+    // Set project images based on project names
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        const titleElement = card.querySelector('.project-title');
+        const imgElement = card.querySelector('.project-image img');
+        
+        if (titleElement && imgElement) {
+            const projectName = titleElement.textContent.trim();
+            // Convert project name to filename format: lowercase with underscores
+            const filename = projectName.toLowerCase().replace(/\s+/g, '_');
+            imgElement.src = `assets/${filename}.png`;
+            imgElement.alt = projectName;
+        }
+    });
+
 });
