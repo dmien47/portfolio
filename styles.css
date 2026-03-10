@@ -1,7 +1,7 @@
 /* CSS Custom Properties - Dark Grey Theme */
 :root {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #0f0f0f;
+    --bg-primary: #0c0c0d;
+    --bg-secondary: #161618;
     --card-bg: #2d2d2d;
     --card-bg-hover: #3d3d3d;
     --text-primary: #e0e0e0;
@@ -25,6 +25,14 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--bg-primary);
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 32%),
+        radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.04) 0%, transparent 28%),
+        linear-gradient(180deg, #080808 0%, #111111 100%);
+    background-size: 60px 60px, 60px 60px, auto, auto, auto;
+    background-attachment: fixed;
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
@@ -114,7 +122,7 @@ body {
     justify-content: center;
     text-align: center;
     padding: 120px 20px 80px;
-    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    background: transparent;
     position: relative;
 }
 
@@ -301,7 +309,7 @@ section {
 
 /* Experience Section */
 .experience {
-    background-color: var(--bg-secondary);
+    background-color: transparent;
 }
 
 .experience-list {
@@ -460,7 +468,7 @@ section {
 
 /* Skills Section */
 .skills {
-    background-color: var(--bg-secondary);
+    background-color: transparent;
 }
 
 .skills-container {
@@ -574,7 +582,7 @@ section {
 
 /* Footer */
 .footer {
-    background-color: var(--bg-secondary);
+    background-color: transparent;
     padding: 2rem 0;
     text-align: center;
     border-top: 1px solid var(--border);
